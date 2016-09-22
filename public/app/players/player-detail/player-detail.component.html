@@ -1,0 +1,11 @@
+<div class="player thumbnail">
+    <div class="overlay-wrapper">
+        <img [src]="player.imageUrl" [alt]="player.fullName" [errSrc]="defaultProfileImageUrl" class="img-fluid" />
+        <span *ngIf="rank" class="overlay">#{{rank}}</span>
+    </div>
+    <div class="caption text-center">
+        <h3>{{player.firstName}} {{player.lastName}} - {{player.position}}</h3>
+        <a class="btn btn-primary-outline"><i class="fa fa-plus"></i> Quick View</a>
+        <a [routerLink]="'/player/' + player.slug" class="btn btn-default-outline"><i class="fa fa-share-square-o"></i> Profile</a>
+    </div>
+</div>

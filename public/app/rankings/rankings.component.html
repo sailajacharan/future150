@@ -1,0 +1,75 @@
+<f150-article-jumbotron-alt></f150-article-jumbotron-alt>
+<div class="container-fluid">
+  <div class="row padding-bottom-20">
+    <div class="col-md-3">
+      <div class="btn-group btn-group-lg btn-group-justified">
+        <a class="btn btn-primary">Player</a>
+        <a class="btn btn-primary-outline">AAU</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="btn-group btn-group-lg btn-group-justified">
+        <a class="btn btn-primary">National</a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-lg btn-primary-outline dropdown-toggle" data-toggle="dropdown">
+            State <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a>Alabama</a>
+            </li>
+            <li>
+              <a>Texas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="btn-group btn-group-lg btn-group-justified">
+        <a class="btn btn-primary-outline" (click)="selectRankings(ranking._id)" *ngFor="let ranking of rankings">{{ranking.year}}</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{selectedRanking.year}} National Player Rankings</div>
+        <div class="panel-heading panel-heading-inverse">Important Trends</div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player/City, St</th>
+              <th>Rating</th>
+              <th>Position</th>
+              <th>Ht/Wt</th>
+              <th>College Interests</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let playerRankings of selectedRanking.players | slice:0:visiblePlayersCount">
+              <td>#{{playerRankings.rank}}</td>
+              <td>
+                <img [src]="playerRankings.player.imageUrl" [alt]="playerRankings.player.fullName" class="img-rounded img-responsive max-height-75 pull-left" />
+                <b>{{playerRankings.player.fullName}}</b>
+                <p>{{playerRankings.player.hometownCity}}, {{playerRankings.player.hometownState}}</p>
+              </td>
+              <td>
+                <span>{{playerRankings.player.score}}</span>
+                <!--<uib-rating state-on="'fa fa-star'" state-off="'fa fa-star-o'" [(ngModel)]="playerRankings.player.stars" readonly="true"></uib-rating>-->
+              </td>
+              <td>{{playerRankings.player.position}}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="panel-footer text-center">
+          <button (click)="vshowMoreRankings()" class="btn btn-lg btn-primary">More Rankings <span class="caret"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

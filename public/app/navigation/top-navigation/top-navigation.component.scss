@@ -1,0 +1,47 @@
+$hsBackgroundColor: #07256C;
+
+.navbar.navbar-top.hs {
+    background-color: $hsBackgroundColor;
+}
+.navbar.navbar-top.womens {
+    background-color: #4B0082;
+}
+.navbar.navbar-top.jr {
+    background-color: #A52A2A;
+}
+.navbar.navbar-top {
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
+    min-height: 30px;
+    padding: 0;
+}
+.navbar.navbar-top .nav.navbar-nav > li.nav-item {
+    color: #fff;
+    line-height: 30px;
+    margin: 0;
+}
+.navbar.navbar-top .nav.navbar-nav > li > a {
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
+}
+.navbar.navbar-top .nav.navbar-nav > li > a:hover,
+.navbar.navbar-top .nav.navbar-nav > li > a:focus {
+    background-color: inherit;
+}
+.navbar.navbar-top .nav.navbar-nav > li > a.separator:after {
+    content: '/';
+    display: inline-block;
+    margin-left: 10px;
+}
+.navbar.navbar-top .nav.navbar-nav > li > a.active {
+    text-decoration: underline;
+}
+.navbar.navbar-top .nav.navbar-nav > li:last-child > a.separator:after {
+    content: '';
+}
+.navbar.navbar-top .nav.navbar-nav.pull-xs-right > li {
+    padding-left: 25px;
+}

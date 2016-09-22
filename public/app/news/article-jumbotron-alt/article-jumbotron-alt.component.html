@@ -1,0 +1,13 @@
+<div class="jumbotron jumbotron-alt">
+    <img [src]="article.imageUrl" [alt]="article.title" [errSrc]="defaultArticleImageUrl" class="img-background" />
+    <div class="jumbotron-inner">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>{{article.title}}</h1>
+                <hr />
+                <p [innerHTML]="article.body" class="body"></p>
+                <a class="btn btn-link text-green">Read Article</a>
+            </div>
+        </div>
+    </div>
+</div>

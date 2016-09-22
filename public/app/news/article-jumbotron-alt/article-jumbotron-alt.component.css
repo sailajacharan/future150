@@ -1,0 +1,41 @@
+.jumbotron-alt {
+  background-color: #111;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0;
+  margin: 0 -15px 20px -15px;
+  padding: 0;
+  position: relative;
+}
+.jumbotron-alt > img.img-background {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.jumbotron-alt > .jumbotron-inner {
+    color: #fff;
+    margin: 0 0 20px 0;
+    padding: 120px;
+    text-align: center;
+}
+.jumbotron-alt > .jumbotron-inner h1 {
+    font-size: 48px;
+    font-weight: bolder;
+}
+.jumbotron-alt > .jumbotron-inner .author {
+    font-size: 24px;
+    font-weight: bold;
+    padding-bottom: 22px;
+    padding-top: 4px;
+}
+.jumbotron-alt > .jumbotron-inner .body {
+    height: 100px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    text-overflow: ellipsis;
+}
+.jumbotron-alt > .jumbotron-inner .body p {
+    font-size: 14px;
+}

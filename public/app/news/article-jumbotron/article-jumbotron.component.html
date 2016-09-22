@@ -1,0 +1,16 @@
+<div class="jumbotron">
+  <img [src]="article.imageUrl" [alt]="article.title" [errSrc]="defaultArticleImageUrl" class="img-background img-blurred" />
+  <div class="jumbotron-inner">
+    <div class="row">
+      <div class="col-md-6">
+        <img [src]="article.imageUrl" [alt]="article.title" [errSrc]="defaultArticleImageUrl" class="img-fluid" />
+      </div>
+      <div class="col-md-6">
+        <h1>{{article.title}}</h1>
+        <div class="author">by {{article.authorFullName}}</div>
+        <div class="body" [innerHTML]="article.body"></div>
+        <a [routerLink]="selectedSite.path + '/article/' + article.slug" class="btn btn-lg btn-secondary">Read Article <i class="fa fa-share-square-o fa-fw"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

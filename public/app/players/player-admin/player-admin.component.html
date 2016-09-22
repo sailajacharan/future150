@@ -1,0 +1,357 @@
+<div class="page-header">
+  <h1>Player Details</h1>
+</div>
+<form (ngSubmit)="save(player)">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="image">Image</label>
+          <div class="row">
+            <div class="col-md-4">
+              <img [src]="player.imageUrl" [alt]="player.fullName" class="img-rounded img-responsive" />
+            </div>
+            <div class="col-md-8">
+              <label for="image" class="btn btn-default">Upload New Picture</label>
+              <input type="file" id="image" class="hidden">
+              <p class="help-block">You can also drag and drop a picture from your computer.</p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label>Url</label>
+          <p>/{{player.slug}}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="player.firstName">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="player.lastName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="position">Position</label>
+          <select class="form-control" id="position" name="position" [(ngModel)]="player.position">
+            <option value="PG">PG</option>
+            <option value="SG">SG</option>
+            <option value="SF">SF</option>
+            <option value="PF">PF</option>
+            <option value="C">C</option>
+            <option value="CG">CG</option>
+            <option value="CF">CF</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="class">Class</label>
+          <input type="text" class="form-control" id="class" name="class" [(ngModel)]="player.class">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="hometownCity">City</label>
+          <input type="text" class="form-control" id="hometownCity" name="hometownCity" [(ngModel)]="player.hometownCity">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="hometownState">State</label>
+          <input type="text" class="form-control" id="hometownState" name="hometownState" [(ngModel)]="player.hometownState">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="highSchool">High School</label>
+          <input type="text" class="form-control" id="highSchool" name="highSchool" [(ngModel)]="player.highSchool">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="aauTeam">AAU</label>
+          <input type="text" class="form-control" id="aauTeam" name="aauTeam" [(ngModel)]="player.aauTeam">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="heightFeet">Height</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="heightFeet" name="heightFeet" [(ngModel)]="player.heightFeet">
+            <span class="input-group-addon">ft</span>
+            <input type="text" class="form-control" id="heightInches" name="heightInches" [(ngModel)]="player.heightInches">
+            <span class="input-group-addon">in</span>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="weight">Weight</label>
+          <input type="text" class="form-control" id="weight" name="weight" [(ngModel)]="player.weight">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="stars">Stars</label>
+          <div>
+            <!--<uib-rating state-on="'fa fa-2x fa-star'" state-off="'fa fa-2x fa-star-o'" [(ngModel)]="player.stars"></uib-rating>-->
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="score">Score</label>
+          <input type="text" class="form-control" id="score" name="score" [(ngModel)]="player.score">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="satAct">SAT/ACT</label>
+          <input type="text" class="form-control" id="satAct" name="satAct" [(ngModel)]="player.satAct">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="twitter">Twitter</label>
+          <input type="text" class="form-control" id="twitter" name="twitter" [(ngModel)]="player.twitter">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Colleges</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>College</th>
+                <th>Level of Interest</th>
+                <th>Offer</th>
+                <th>Visit Date</th>
+                <th>Commit Date</th>
+                <th>Sign Date</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--<tr ng-repeat="college in player.colleges">
+                <td>{{college.college.name}}</td>
+                <td>{{college.levelOfInterest}}</td>
+                <td>{{college.offer}}</td>
+                <td>{{college.visitDate}}</td>
+                <td>{{college.commitDate}}</td>
+                <td>{{college.signDate}}</td>
+                <td>
+                  <button type="button" class="btn btn-block btn-default" (click)="removeCollege(college)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <ui-select [(ngModel)]="newCollege.college">
+                    <ui-select-match>
+                      <span ng-bind="$select.selected.name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="college in colleges">
+                      <span ng-bind="college.name"></span>
+                    </ui-select-choices>
+                  </ui-select>
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="levelOfInterest" [(ngModel)]="newCollege.levelOfInterest" />
+                </td>
+                <td>
+                  <input type="checkbox" name="offer" [(ngModel)]="newCollege.offer" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="visitDate" [(ngModel)]="newCollege.visitDate" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="commitDate" [(ngModel)]="newCollege.commitDate" />
+                </td>
+                <td>
+                  <input type="text" class="form-control" name="signDate" [(ngModel)]="newCollege.signDate" />
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-default" (click)="addCollege(newCollege)">Add</button>
+                </td>
+              </tr>-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="isPaywall" [(ngModel)]="player.isPaywall"> Paywall
+        </label>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="leagues">Leagues</label>
+          <div class="checkbox">
+            <label class="checkbox-inline">
+              <input type="checkbox" value="eybl"> EYBL
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="uaa"> UAA
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="adidas"> Adidas
+            </label>
+          </div>
+        </div>
+      </div>
+      <h2>Scouting</h2>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <label for="shooting">Shooting</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="shooting" [(ngModel)]="player.shooting" value="average"> Average
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="shooting" [(ngModel)]="player.shooting" value="good"> Good
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="shooting" [(ngModel)]="player.shooting" value="excellent"> Excellent
+            </label>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="dribbling">Dribbling</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="dribbling" [(ngModel)]="player.dribbling" value="average"> Average
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="dribbling" [(ngModel)]="player.dribbling" value="good"> Good
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="dribbling" [(ngModel)]="player.dribbling" value="excellent"> Excellent
+            </label>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="passing">Passing</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="passing" [(ngModel)]="player.passing" value="average"> Average
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="passing" [(ngModel)]="player.passing" value="good"> Good
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="passing" [(ngModel)]="player.passing" value="excellent"> Excellent
+            </label>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="rebounding">Rebounding</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="rebounding" [(ngModel)]="player.rebounding" value="average"> Average
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="rebounding" [(ngModel)]="player.rebounding" value="good"> Good
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="rebounding" [(ngModel)]="player.rebounding" value="excellent"> Excellent
+            </label>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="intangibles">Intangibles</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="intangibles" [(ngModel)]="player.intangibles" value="average"> Average
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="intangibles" [(ngModel)]="player.intangibles" value="good"> Good
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="intangibles" [(ngModel)]="player.intangibles" value="excellent"> Excellent
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h3>Notes</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Author</th>
+                <th>Note</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--<tr ng-repeat="note in player.notes">
+                <td>{{note.createdDate}}</td>
+                <td>{{note.author.fullName}}</td>
+                <td [innerHTML]="note.noteHtml"></td>
+                <td>
+                  <button type="button" class="btn btn-block btn-default" (click)="removeNote(note)">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>{{newNote.createdDate}}</p>
+                </td>
+                <td>
+                  <p>{{newNote.author.fullName}}</p>
+                </td>
+                <td>
+                  <summernote [(ngModel)]="newNote.note" height="300"></summernote>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-block btn-default" (click)="addNote(newNote)">Add</button>
+                </td>
+              </tr>-->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="strengths">Strengths</label>
+          <!--<tags-input [(ngModel)]="player.strengths">
+            <auto-complete source="loadStrengths($query)"></auto-complete>
+          </tags-input>-->
+        </div>
+        <div class="form-group col-md-6">
+          <label for="needsToImprove">Needs to Improve</label>
+          <!--<tags-input [(ngModel)]="player.needsToImprove">
+            <auto-complete source="loadImprovements($query)"></auto-complete>
+          </tags-input>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-xs-12">
+          <label for="projections">Projections</label>
+          <div class="radio">
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="unknown"> Unknown
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="high-major"> High-Major
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="mid-major"> Mid-Major
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="low-major"> Low-Major
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="divisionIi"> Division II
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="naia"> NAIA
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="divisionIii"> Division III
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="juco"> JUCO
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="projections" [(ngModel)]="player.projections" value="collegeProspect"> College Prospect
+            </label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a routerLink="/admin/players" class="btn btn-default">Cancel</a>
+    </div>
+  </div>
+</form>

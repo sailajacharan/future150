@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "types": [
+            "core-js",
+            "jasmine",
+            "node"
+        ]
+    },
+    "compileOnSave": false
+}

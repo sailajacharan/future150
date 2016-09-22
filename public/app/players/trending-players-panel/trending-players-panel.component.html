@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header text-xs-center">
+                <h4>This Week's Trending Players</h4>
+            </div>
+            <div class="card-header text-xs-center">
+                <ul class="nav nav-pills card-header-pills">
+                    <li>
+                        <a (click)="selectTrending('viewed')">Most Viewed</a>
+                    </li>
+                    <li>
+                        <a (click)="selectTrending('liked')">Most Liked</a>
+                    </li>
+                    <li>
+                        <a (click)="selectTrending('shared')">Most Shared</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-2_4 col-sm-4" *ngFor="let player of trendingPlayers | slice:0:visiblePlayersCount" [hidden]="isPlayersLoading">
+                        <f150-player-detail [player]="player" [defaultProfileImageUrl]="defaultProfileImageUrl"></f150-player-detail>
+                    </div>
+                    <div class="col-xs-12 text-center" [hidden]="!isPlayersLoading">
+                        <i class="fa fa-circle-o-notch fa-3x fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-xs-center">
+                <button (click)="showMoreTrendingPlayers()" class="btn btn-lg btn-primary">More Players <span class="caret"></span></button>
+                <a class="btn btn-lg btn-default">View All <i class="fa fa-share-square-o"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

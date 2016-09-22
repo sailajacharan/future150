@@ -1,0 +1,9 @@
+<a [routerLink]="selectedSite.path + '/article/' + article.slug">
+    <img [src]="article.imageUrl" [alt]="article.title" [errSrc]="defaultArticleImageUrl" class="card-img img-fluid" />
+    <div class="card-img-overlay">
+        <span class="overlay">20 Shares</span>
+    </div>
+    <div class="card-block text-xs-center">
+        <h3>{{article.title}}</h3>
+    </div>
+</a>

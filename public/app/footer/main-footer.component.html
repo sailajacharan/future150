@@ -1,0 +1,160 @@
+<footer [class]="'container-fluid text-center-xs ' + selectedSite.className">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Fans &amp; Members</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a>Message Boards</a>
+                        </li>
+                        <li>
+                            <a>News Articles</a>
+                        </li>
+                        <li>
+                            <a href>My Player Feed</a>
+                        </li>
+                        <li>
+                            <a>Recruiting Videos</a>
+                        </li>
+                        <li>
+                            <a>National Rankings</a>
+                        </li>
+                        <li>
+                            <a>College Teams</a>
+                        </li>
+                        <li>
+                            <a>Player Search</a>
+                        </li>
+                        <li>
+                            <a>Submit Player Info</a>
+                        </li>
+                        <li>
+                            <a>Shop Gear</a>
+                        </li>
+                        <li>
+                            <a>Join For Free</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Basketball Players</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a>Exposure Camps</a>
+                        </li>
+                        <li>
+                            <a>College Exposure Pack</a>
+                        </li>
+                        <li>
+                            <a href>Custom Exposure</a>
+                        </li>
+                        <li>
+                            <a href>My News Alerts</a>
+                        </li>
+                        <li>
+                            <a>Submit My Video</a>
+                        </li>
+                        <li>
+                            <a href>Get Recruiting Video</a>
+                        </li>
+                        <li>
+                            <a>AAU Team Rankings</a>
+                        </li>
+                        <li>
+                            <a>College Teams</a>
+                        </li>
+                        <li>
+                            <a>Shop Gear</a>
+                        </li>
+                        <li>
+                            <a>Submit Player Info</a>
+                        </li>
+                        <li>
+                            <a>Future150 Alumni</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h3>AAU &amp; College Coaches</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a>Exposure Tournaments</a>
+                        </li>
+                        <li>
+                            <a>Exposure Camps</a>
+                        </li>
+                        <li>
+                            <a>Submit Player Video</a>
+                        </li>
+                        <li>
+                            <a>Player Rankings</a>
+                        </li>
+                        <li>
+                            <a>AAU Team Rankings</a>
+                        </li>
+                        <li>
+                            <a>Submit Player Info</a>
+                        </li>
+                        <li>
+                            <a href="http://future150report.com/" target="_blank">Future150 Report</a>
+                        </li>
+                        <li>
+                            <a>Future150 Alumni</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12 col-sm-6 hidden-xs">
+                    <h3>Latest Articles</h3>
+                    <ul class="list-unstyled">
+                        <li *ngFor="let article of latestArticles">
+                            <a>
+                                <em>Article:</em> {{article.title}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="pull-left get-in-touch">Get in Touch:</h3>
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <a href="http://facebook.com/future150" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="http://twitter.com/future150" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="http://instagram.com/future150" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-instagram fa-inverse fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>&copy; 2016 Future150, LLC. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

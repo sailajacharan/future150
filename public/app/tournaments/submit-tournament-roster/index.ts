@@ -1,0 +1,1 @@
+export * from './submit-tournament-roster.component';

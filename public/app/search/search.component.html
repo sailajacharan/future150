@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Player Search</h1>
+    <p [hidden]="!q">Showing results for {{q}}.</p>
+  </div>
+  <div class="row" [hidden]="isLoading">
+    <div class="col-xs-12">
+      <div class="media" *ngFor="let player of players">
+        <div class="media-left">
+          <a>
+            <img class="media-object" [src]="player.imageUrl" [errSrc]="defaultProfileImageUrl" [alt]="player.fullName" />
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{player.firstName}} {{player.lastName}} - {{player.position}}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

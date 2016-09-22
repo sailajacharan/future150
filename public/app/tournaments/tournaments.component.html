@@ -1,0 +1,29 @@
+  <f150-event-jumbotron eventType="tournaments"></f150-event-jumbotron>
+  <div class="row" ng-if="tournaments.length > 1">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">Upcoming Future150 Tournaments</div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4 col-sm-6" *ngFor="let tournament of tournaments | slice:0:visibleTournamentCount" [hidden]="isTournamentsLoading">
+              <a class="thumbnail">
+                <div class="overlay-wrapper">
+                  <img [src]="tournament.imageUrl" [alt]="tournament.title" class="img-fluid">
+                  <span class="overlay">3 Spots Left</span>
+                </div>
+                <div class="caption text-center">
+                  <h3>{{tournament.title}}</h3>
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 text-center" [hidden]="!isTournamentsLoading">
+              <i class="fa fa-circle-o-notch fa-3x fa-spin"></i>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer text-center">
+          <button (click)="showMoreTournaments()" class="btn btn-lg btn-primary">More Tournaments <span class="caret"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>

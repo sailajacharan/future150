@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+    node:
+        container_name: future150
+        image: future150/future150
+        build:
+            context: .
+            dockerfile: dockerfile
+        ports:
+            - "8080:8080"
+        networks:
+            - future150_network
+    mongodb:
+        container_name: mongodb
+        image: mongo
+        networks:
+            - future150_network
+networks:
+    future150_network:
+        driver: bridge

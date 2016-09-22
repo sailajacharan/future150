@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header text-xs-center">
+                <h4>Basketball Recruiting News</h4>
+            </div>
+            <div class="card-block">
+                <div class="card-deck-wrapper">
+                    <div class="card-deck row">
+                        <div *ngFor="let article of articles | slice:0:visibleArticleCount" class="col-md-4 col-sm-6">
+                            <f150-article-detail [article]="article" [defaultArticleImageUrl]="defaultArticleImageUrl" [selectedSite]="selectedSite" class="card"></f150-article-detail>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-xs-center">
+                <button (click)="showMoreNews()" class="btn btn-lg btn-primary">More News <span class="caret"></span></button>
+                <a [routerLink]="selectedSite.path + '/news'" *ngIf="showViewAll" class="btn btn-lg btn-default">View All <i class="fa fa-share-square-o"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

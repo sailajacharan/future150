@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <h1>Shop</h1>
+  </div>
+  <div class="row" *ngFor="let product of products">
+    <div class="col-md-4">
+      <a>
+        <img [src]="product.imageUrl" [errSrc]="defaultProductImageUrl" [alt]="product.name" class="img-rounded img-responsive" />
+      </a>
+    </div>
+    <div class="col-md-8">
+      <a>{{product.name}}</a>
+      <p>{{product.description}}</p>
+      <a class="btn btn-primary">Buy</a>
+    </div>
+  </div>
+</div>

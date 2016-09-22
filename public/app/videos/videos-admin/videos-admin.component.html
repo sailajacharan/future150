@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Videos</h1>
+</div>
+<div class="row">
+  <div class="col-sm-10">
+    <input type="text" class="form-control" />
+  </div>
+  <div class="col-sm-2">
+    <a class="btn btn-block btn-primary">Add</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let video of videos">
+            <td>
+              <a class="btn btn-link">Edit</a>
+            </td>
+            <td>{{video.title}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

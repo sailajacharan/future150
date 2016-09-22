@@ -1,0 +1,66 @@
+<nav class="navbar navbar-default">
+    <a routerLink="/admin" class="navbar-brand">
+        <img src="/img/future150.png" alt="Future150" />
+    </a>
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/admin/players">Players</a>
+        </li>
+        <li routerLinkActive="active" dropdown class="nav-item">
+            <a href dropdownToggle>
+                Rankings <span class="caret"></span>
+            </a>
+            <ul dropdownMenu>
+                <a href class="dropdown-item">National</a>
+                <a href class="dropdown-item">State</a>
+                <a href class="dropdown-item">AAU</a>
+            </ul>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/admin/articles">Articles</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/admin/videos">Videos</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a routerLink="/admin/camps">Camps</a>
+        </li>
+        <li class="nav-item">
+            <a>Tournaments</a>
+        </li>
+        <li routerLinkActive="active" dropdown class="nav-item">
+            <a href dropdownToggle>
+                Misc <span class="caret"></span>
+            </a>
+            <ul dropdownMenu>
+                <a href class="dropdown-item">Merchandise</a>
+                <a href class="dropdown-item">Colleges</a>
+                <a href class="dropdown-item">Ads</a>
+                <a href class="dropdown-item">Contacts</a>
+                <a href class="dropdown-item">Alumni</a>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href>Users</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav pull-xs-right">
+        <li *ngIf="user" class="nav-item">
+            <a href>Login</a>
+        </li>
+        <li *ngIf="!user" dropdown>
+            <a href class="dropdown-toggle" data-toggle="dropdown">
+                <img [src]="user.profileImageUrl" [alt]="user.username" class="img-circle" />{{user.username}} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a>Profile</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

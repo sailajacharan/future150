@@ -1,0 +1,49 @@
+<nav [class]="'navbar navbar-default ' + selectedSite.className">
+    <a [routerLink]="selectedSite.path" class="navbar-brand">
+        <img [src]="selectedSite.logoImageUrl" alt="Future150" />
+    </a>
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active" dropdown class="nav-item">
+            <a href dropdownToggle>
+                {{selectedSite.name}}<span class="caret"></span>
+            </a>
+            <div dropdownMenu>
+                <a [routerLink]="site.path" *ngFor="let site of sites" class="dropdown-item">{{site.name}}</a>
+            </div>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/rankings'">Rankings</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/news'">News</a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/videos'">Videos</a>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-inverse">
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/camps'">
+                Camps <!--<span class="badge hidden-xs hidden-sm">{{campsCount}}</span>-->
+            </a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/tournaments'">
+                Tournaments <!--<span class="badge hidden-xs hidden-sm">{{tournamentsCount}}</span>-->
+            </a>
+        </li>
+        <li routerLinkActive="active" class="nav-item">
+            <a [routerLink]="selectedSite.path + '/shop'">
+                Shop <!--<i class="fa fa-user hidden-xs hidden-sm text-dark-gray"></i>-->
+            </a>
+        </li>
+    </ul>
+    <!--<form (ngSubmit)="search()" class="form-inline pull-xs-right">
+        <div class="input-group">
+            <span class="input-group-addon" (click)="expandSearch = !expandSearch">
+                <i class="fa fa-2x fa-search"></i>
+            </span>
+            <input type="text" name="q" [hidden]="!expandSearch" [(ngModel)]="q" class="form-control" />
+        </div>
+    </form>-->
+</nav>

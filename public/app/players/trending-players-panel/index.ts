@@ -1,0 +1,1 @@
+export * from './trending-players-panel.component';

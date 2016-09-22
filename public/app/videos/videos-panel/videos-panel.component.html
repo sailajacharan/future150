@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header text-xs-center">
+                <h4>This Week's Top Player Videos</h4>
+            </div>
+            <div class="card-header text-xs-center">
+                <ul class="nav nav-pills card-header-pills">
+                    <li>
+                        <a (click)="selectVideos('viewed')">Most Viewed</a>
+                    </li>
+                    <li>
+                        <a (click)="selectVideos('liked')">Most Liked</a>
+                    </li>
+                    <li>
+                        <a (click)="selectVideos('shared')">Most Shared</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6" *ngFor="let video of videos | slice:0:visibleVideoCount" [hidden]="isVideosLoading">
+                        <div class="thumbnail">
+                            <div class="video overlay-wrapper">
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <!--<youtube-video video-id="video.youTubeId" class="embed-responsive-item"></youtube-video>-->
+                                </div>
+                                <span class="overlay">210 Views</span>
+                            </div>
+                            <div class="caption text-center">
+                                <h3>{{video.title}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 text-center" [hidden]="!isVideosLoading">
+                        <i class="fa fa-circle-o-notch fa-3x fa-spin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-xs-center">
+                <button (click)="showMoreVideos()" class="btn btn-lg btn-primary">More Videos <span class="caret"></span></button>
+                <a [routerLink]="selectedSite.path + '/videos'" class="btn btn-lg btn-default">View All <i class="fa fa-share-square-o"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+footer.hs {
+    background-color: #07256C;
+}
+footer.womens {
+    background-color: #4B0082;
+}
+footer.jr {
+    background-color: #A52A2A;
+}
+footer {
+    color: #fff;
+    padding-top: 20px;
+}
+footer.container-fluid {
+    padding-left: 75px;
+    padding-right: 75px;
+}
+footer a {
+    color: #fff;
+}
+footer h3 {
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+footer.hs .fa-inverse {
+    color: #07256C;
+}
+footer.womens .fa-inverse {
+    background-color: #4B0082;
+}
+footer.jr .fa-inverse {
+    background-color: #A52A2A;
+}
+h3.get-in-touch {
+    margin-bottom: 0;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
