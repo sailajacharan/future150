@@ -34,10 +34,10 @@
     "font-awesome": "^4.6.3",
     "jasmine": "^2.5.2",
     "jasmine-core": "^2.5.2",
-    "jquery": "^3.1.0",
+    "jquery": "^3.1.1",
     "jsonwebtoken": "^5.5.0",
     "method-override": "^2.3.5",
-    "mongoose": "^4.2.7",
+    "mongoose": "^4.6.1",
     "newrelic": "^1.30.3",
     "ng2-bootstrap": "^1.1.5",
     "node-sass": "^3.10.0",
@@ -47,12 +47,12 @@
     "rss": "^1.2.1",
     "rxjs": "^5.0.0-beta.12",
     "sitemap": "^1.5.0",
-    "zone.js": "^0.6.23"
+    "zone.js": "^0.6.25"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.32",
-    "@types/jasmine": "^2.2.33",
-    "@types/node": "^6.0.39",
+    "@types/core-js": "^0.9.34",
+    "@types/jasmine": "^2.2.34",
+    "@types/node": "^6.0.40",
     "babel-polyfill": "^6.13.0",
     "codelyzer": "0.0.28",
     "css-loader": "^0.25.0",
@@ -80,7 +80,7 @@
     "supertest": "^1.2.0",
     "ts-loader": "^0.8.2",
     "tslint": "^3.15.1",
-    "typescript": "^2.0.0",
+    "typescript": "^2.0.3",
     "url-loader": "^0.5.7",
     "wallaby-webpack": "0.0.22",
     "webpack": "^1.13.2"
