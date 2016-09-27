@@ -8,7 +8,7 @@
                 <div class="card-deck-wrapper">
                     <div class="card-deck row">
                         <div *ngFor="let article of articles | slice:0:visibleArticleCount" class="col-md-4 col-sm-6">
-                            <f150-article-detail [article]="article" [defaultArticleImageUrl]="defaultArticleImageUrl" [selectedSite]="selectedSite" class="card"></f150-article-detail>
+                            <f150-article-detail [article]="article" [defaultArticleImageUrl]="defaultArticleImageUrl" class="card"></f150-article-detail>
                         </div>
                     </div>
                 </div>
