@@ -1,41 +1,45 @@
 <f150-article-jumbotron-alt></f150-article-jumbotron-alt>
 <div class="container-fluid">
   <div class="row padding-bottom-20">
-    <div class="col-md-3">
-      <div class="btn-group btn-group-lg btn-group-justified">
-        <a class="btn btn-primary">Player</a>
-        <a class="btn btn-primary-outline">AAU</a>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="btn-group btn-group-lg btn-group-justified">
-        <a class="btn btn-primary">National</a>
-        <div class="btn-group">
-          <button type="button" class="btn btn-lg btn-primary-outline dropdown-toggle" data-toggle="dropdown">
-            State <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li>
-              <a>Alabama</a>
-            </li>
-            <li>
-              <a>Texas</a>
-            </li>
-          </ul>
+    <div class="col-md-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="btn-group btn-group-lg btn-group-justified">
+            <a class="btn btn-primary">Player</a>
+            <a class="btn btn-outline-primary">AAU</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="btn-group btn-group-lg btn-group-justified">
+            <a class="btn btn-primary">National</a>
+            <div class="btn-group btn-group-lg">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown">
+                State <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <a class="dropdown-item">Alabama</a>
+                <a class="dropdown-item">Texas</a>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="btn-group btn-group-lg btn-group-justified">
-        <a class="btn btn-primary-outline" (click)="selectRankings(ranking._id)" *ngFor="let ranking of rankings">{{ranking.year}}</a>
+    <div class="col-md-7 text-xs-right">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-group btn-group-lg btn-group-justified">
+            <a class="btn btn-outline-primary" (click)="selectRankings(ranking._id)" *ngFor="let ranking of rankings">{{ranking.year}}</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <div class="panel panel-default">
-        <div class="panel-heading">{{selectedRanking.year}} National Player Rankings</div>
-        <div class="panel-heading panel-heading-inverse">Important Trends</div>
+      <div class="card">
+        <div class="card-header text-xs-center">{{selectedRanking.year}} National Player Rankings</div>
+        <div class="card-header card-header-inverse text-xs-center">Important Trends</div>
         <table class="table">
           <thead>
             <tr>
@@ -66,8 +70,8 @@
             </tr>
           </tbody>
         </table>
-        <div class="panel-footer text-center">
-          <button (click)="vshowMoreRankings()" class="btn btn-lg btn-primary">More Rankings <span class="caret"></span></button>
+        <div class="card-footer text-xs-center">
+          <button (click)="showMoreRankings()" class="btn btn-lg btn-primary">More Rankings <span class="caret"></span></button>
         </div>
       </div>
     </div>
