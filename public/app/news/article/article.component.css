@@ -1,0 +1,13 @@
+.jumbotron, .jumobtron-fluid {
+    padding: 0;
+}
+img.img-background {
+    width: 100%;
+}
+.page-header {
+    padding: 30px;
+}
+.article-body {
+    background-color: #fff;
+    padding: 30px;
+}

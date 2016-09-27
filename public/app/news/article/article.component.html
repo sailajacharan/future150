@@ -1,12 +1,16 @@
-<div class="jumbotron" [ngStyle]="{'background-image': 'url(' + article.imageUrl + ')'}"></div>
-<div class="container-fluid">
-  <div class="page-header">
-    <h1>{{article.title}}</h1>
-    <p>{{article.description}}</p>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <div [innerHTML]="article.body"></div>
+<div class="jumbotron jumbotron-fluid">
+  <img [src]="article.imageUrl" [alt]="article.title" [errSrc]="defaultArticleImageUrl" class="img-background" />
+  <div class="container-fluid">
+    <div class="page-header">
+      <h1>{{article.title}}</h1>
+    </div>
+    <div class="row article-body">
+      <div class="col-md-9">
+        <div [innerHTML]="article.body"></div>
+      </div>
+      <div class="col-md-3">
+        
+      </div>
     </div>
   </div>
 </div>

@@ -8,7 +8,10 @@ interface IArticleGetBySlugRouteParams {
 }
 
 @Component({
-  templateUrl: '/app/news/article/article.component.html'
+  templateUrl: '/app/news/article/article.component.html',
+  styleUrls: [
+    'app/news/article/article.component.css'
+  ]
 })
 export class ArticleComponent implements OnInit, OnDestroy {
   private paramsSub: any;
