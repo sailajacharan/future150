@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import {
-    Site,
-    Article
-} from '../../shared';
+import { CurrentSiteService, Site } from '../../site';
+import { Article } from '../shared';
 
 @Component({
     selector: 'f150-article-detail',
@@ -17,6 +15,14 @@ export class ArticleDetailComponent {
     public article: Article;
     @Input()
     public defaultArticleImageUrl: string;
-    @Input()
-    public selectedSite: Site;
+    public selectedSite: Site = <Site>{};
+
+  public constructor(
+    private currentSiteService: CurrentSiteService
+  ) {
+    this.currentSiteService.currentSite
+      .subscribe((currentSite: Site) => {
+        this.selectedSite = currentSite;
+      });
+  }
 }
