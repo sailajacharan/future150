@@ -68,8 +68,19 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global, process) {;
-	;
+	/* WEBPACK VAR INJECTION */(function(global, process) {/**
+	* @license
+	* Copyright Google Inc. All Rights Reserved.
+	*
+	* Use of this source code is governed by an MIT-style license that can be
+	* found in the LICENSE file at https://angular.io/license
+	*/
+	(function (global, factory) {
+	     true ? factory() :
+	    typeof define === 'function' && define.amd ? define(factory) :
+	    (factory());
+	}(this, (function () { 'use strict';
+
 	var Zone$1 = (function (global) {
 	    if (global.Zone) {
 	        throw new Error('Zone already loaded.');
@@ -96,25 +107,25 @@
 	            enumerable: true,
 	            configurable: true
 	        });
-	        ;
+	        
 	        Object.defineProperty(Zone, "currentTask", {
 	            get: function () { return _currentTask; },
 	            enumerable: true,
 	            configurable: true
 	        });
-	        ;
+	        
 	        Object.defineProperty(Zone.prototype, "parent", {
 	            get: function () { return this._parent; },
 	            enumerable: true,
 	            configurable: true
 	        });
-	        ;
+	        
 	        Object.defineProperty(Zone.prototype, "name", {
 	            get: function () { return this._name; },
 	            enumerable: true,
 	            configurable: true
 	        });
-	        ;
+	        
 	        Zone.prototype.get = function (key) {
 	            var zone = this.getZoneWith(key);
 	            if (zone)
@@ -223,7 +234,7 @@
 	        Zone.__symbol__ = __symbol__;
 	        return Zone;
 	    }());
-	    ;
+	    
 	    var ZoneDelegate = (function () {
 	        function ZoneDelegate(zone, parentDelegate, zoneSpec) {
 	            this._taskCounts = { microTask: 0, macroTask: 0, eventTask: 0 };
@@ -381,7 +392,7 @@
 	        return ZoneTask;
 	    }());
 	    function __symbol__(name) { return '__zone_symbol__' + name; }
-	    ;
+	    
 	    var symbolSetTimeout = __symbol__('setTimeout');
 	    var symbolPromise = __symbol__('Promise');
 	    var symbolThen = __symbol__('then');
@@ -488,12 +499,12 @@
 	                        throw new Error("Uncaught (in promise): " + value);
 	                    }
 	                    catch (e) {
-	                        var error = e;
-	                        error.rejection = value;
-	                        error.promise = promise;
-	                        error.zone = Zone.current;
-	                        error.task = Zone.currentTask;
-	                        _uncaughtPromiseErrors.push(error);
+	                        var error_1 = e;
+	                        error_1.rejection = value;
+	                        error_1.promise = promise;
+	                        error_1.zone = Zone.current;
+	                        error_1.task = Zone.currentTask;
+	                        _uncaughtPromiseErrors.push(error_1);
 	                        scheduleQueueDrain();
 	                    }
 	                }
@@ -659,7 +670,7 @@
 	    }
 	    return args;
 	}
-	;
+
 	function patchPrototype(prototype, fnNames) {
 	    var source = prototype.constructor['name'];
 	    var _loop_1 = function(i) {
@@ -677,7 +688,7 @@
 	        _loop_1(i);
 	    }
 	}
-	;
+
 	var isWebWorker = (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope);
 	var isNode = (typeof process !== 'undefined' && {}.toString.call(process) === '[object process]');
 	var isBrowser = !isNode && !isWebWorker && !!(typeof window !== 'undefined' && window['HTMLElement']);
@@ -720,7 +731,7 @@
 	    };
 	    Object.defineProperty(obj, prop, desc);
 	}
-	;
+
 	function patchOnProperties(obj, properties) {
 	    var onProperties = [];
 	    for (var prop in obj) {
@@ -737,7 +748,7 @@
 	        }
 	    }
 	}
-	;
+
 	var EVENT_TASKS = zoneSymbol('eventTasks');
 	// For EventTarget
 	var ADD_EVENT_LISTENER = 'addEventListener';
@@ -853,6 +864,7 @@
 	        }
 	    };
 	}
+
 	var zoneAwareAddEventListener = makeZoneAwareAddListener(ADD_EVENT_LISTENER, REMOVE_EVENT_LISTENER);
 	var zoneAwareRemoveEventListener = makeZoneAwareRemoveListener(REMOVE_EVENT_LISTENER);
 	function patchEventTargetMethods(obj) {
@@ -927,7 +939,7 @@
 	        }
 	    }
 	}
-	;
+
 	function createNamedFn(name, delegate) {
 	    try {
 	        return (Function('f', "return function " + name + "(){return f(this, arguments)}"))(delegate);
@@ -1022,13 +1034,13 @@
 	        return desc;
 	    };
 	}
-	;
+
 	function _redefineProperty(obj, prop, desc) {
 	    var originalConfigurableFlag = desc.configurable;
 	    desc = rewriteDescriptor(obj, prop, desc);
 	    return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
 	}
-	;
+
 	function isUnconfigurable(obj, prop) {
 	    return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
 	}
@@ -1194,7 +1206,7 @@
 	    Object.defineProperty(XMLHttpRequest.prototype, 'onreadystatechange', {});
 	    return result;
 	}
-	;
+
 	var unboundKey = zoneSymbol('unbound');
 	// Whenever any eventListener fires, we check the eventListener target and all parents
 	// for `onwhatever` properties and replace them with zone-bound functions
@@ -1224,9 +1236,8 @@
 	    for (var i = 0; i < eventNames.length; i++) {
 	        _loop_1(i);
 	    }
-	    ;
+	    
 	}
-	;
 
 	function patchTimer(window, setName, cancelName, nameSuffix) {
 	    var setNative = null;
@@ -1382,6 +1393,9 @@
 	        'watchPosition'
 	    ]);
 	}
+
+	})));
+
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(2)))
 
 /***/ },
@@ -62503,7 +62517,10 @@
 	    };
 	    ArticleComponent = __decorate([
 	        core_1.Component({
-	            templateUrl: '/app/news/article/article.component.html'
+	            templateUrl: '/app/news/article/article.component.html',
+	            styleUrls: [
+	                'app/news/article/article.component.css'
+	            ]
 	        }), 
 	        __metadata('design:paramtypes', [router_1.ActivatedRoute, articles_service_1.ArticlesService])
 	    ], ArticleComponent);
@@ -62782,9 +62799,17 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	var core_1 = __webpack_require__(6);
-	var shared_1 = __webpack_require__(367);
+	var site_1 = __webpack_require__(372);
+	var shared_1 = __webpack_require__(403);
 	var ArticleDetailComponent = (function () {
-	    function ArticleDetailComponent() {
+	    function ArticleDetailComponent(currentSiteService) {
+	        var _this = this;
+	        this.currentSiteService = currentSiteService;
+	        this.selectedSite = {};
+	        this.currentSiteService.currentSite
+	            .subscribe(function (currentSite) {
+	            _this.selectedSite = currentSite;
+	        });
 	    }
 	    __decorate([
 	        core_1.Input(), 
@@ -62794,10 +62819,6 @@
 	        core_1.Input(), 
 	        __metadata('design:type', String)
 	    ], ArticleDetailComponent.prototype, "defaultArticleImageUrl");
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', Object)
-	    ], ArticleDetailComponent.prototype, "selectedSite");
 	    ArticleDetailComponent = __decorate([
 	        core_1.Component({
 	            selector: 'f150-article-detail',
@@ -62806,7 +62827,7 @@
 	                'app/news/article-detail/article-detail.component.css'
 	            ]
 	        }), 
-	        __metadata('design:paramtypes', [])
+	        __metadata('design:paramtypes', [site_1.CurrentSiteService])
 	    ], ArticleDetailComponent);
 	    return ArticleDetailComponent;
 	}());
