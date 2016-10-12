@@ -21,8 +21,6 @@ This project is MEAN.
 
 # Tests
 
-Unit Tests (client and server) are run using the Gulp task runner.
-
-The easiest way to run all tests is by running:
+Unit Tests (client and server) are run using NPM.
 
 `npm test`
